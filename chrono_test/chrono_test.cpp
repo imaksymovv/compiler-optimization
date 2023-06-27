@@ -21,24 +21,6 @@ int main() {
     auto dur = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start)
                    .count();
     info << dur << std::endl;
-
-    info.seekg(0);  
-
-    int number;
-    int sum = 0;
-    int count = 0;
-
-    while (info >> number) {
-      sum += number;
-      count++;
-    }
-
-    double average = 0;
-    if (count > 0) {
-      average = static_cast<double>(sum) / count;
-    }
-
-    std::cout << "Average: " << average << std::endl;
   } else {
     std::cout << "file is not opened" << std::endl;
   }
